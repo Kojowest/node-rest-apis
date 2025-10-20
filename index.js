@@ -38,7 +38,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get("/me", (request, response) => {
-  res.setHeader("Content-Type", "application/json");
+  response.setHeader("Content-Type", "application/json");
   fetch("https://catfact.ninja/fact", { signal })
     .then((response) => {
       clearTimeout(timeoutId); // Clear the timeout if the request completes successfully

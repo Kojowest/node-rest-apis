@@ -6,6 +6,7 @@ const ratelimit = require("express-rate-limit");
 const app = express();
 app.use(express.json());
 
+//rate limiter
 const limiter = ratelimit({
   windowMs: 15 * 60 * 1000,
   max: 5,
@@ -17,6 +18,7 @@ app.use(limiter);
 
 const PORT = process.env.PORT || 3000;
 
+//time function to get current date and time in ISO 8601 format
 function getCurrentISODateTime() {
   return new Date().toISOString();
 }
